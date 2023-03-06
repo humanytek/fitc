@@ -7,3 +7,6 @@
 [submodule "mx_import_xml"]
 	path = mx_import_xml
 	url = git@github.com:humanytek-team/mx_import_xml.git
+[submodule "humanytek-team/deny_sales_per_salesman"]
+	path = humanytek-team/deny_sales_per_salesman
+	url = git@github.com:humanytek-team/deny_sales_per_salesman.git
