@@ -1,12 +1,1 @@
-[submodule "auto_exporter"]
-	path = auto_exporter
-	url = git@github.com:humanytek-team/auto_exporter.git
-[submodule "ftp_save"]
-	path = ftp_save
-	url = git@github.com:humanytek-team/ftp_save.git
-[submodule "mx_import_xml"]
-	path = mx_import_xml
-	url = git@github.com:humanytek-team/mx_import_xml.git
-[submodule "humanytek-team/deny_sales_per_salesman"]
-	path = humanytek-team/deny_sales_per_salesman
-	url = git@github.com:humanytek-team/deny_sales_per_salesman.git
+
