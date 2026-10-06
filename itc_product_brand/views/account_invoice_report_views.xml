@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_account_invoice_report_search_brand" model="ir.ui.view">
+        <field name="name">account.invoice.report.search.brand</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.view_account_invoice_report_search"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_categ_id']" position="after">
+                <field name="brand_id"/>
+            </xpath>
+            <xpath expr="//filter[@name='category_product']" position="after">
+                <filter string="Marca" name="brand_id" context="{'group_by':'brand_id'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_report_pivot_brand" model="ir.ui.view">
+        <field name="name">account.invoice.report.pivot.brand</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.view_account_invoice_report_pivot"/>
+        <field name="arch" type="xml">
+            <xpath expr="//pivot" position="inside">
+                <field name="brand_id" type="col" invisible="1"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="account_invoice_report_view_tree_brand" model="ir.ui.view">
+        <field name="name">account.invoice.report.tree.brand</field>
+        <field name="model">account.invoice.report</field>
+        <field name="inherit_id" ref="account.account_invoice_report_view_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_categ_id']" position="after">
+                <field name="brand_id" optional="hide"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
