@@ -1,0 +1,12 @@
+{
+  "module": "itc_sales_customer_statement",
+  "version": "17.0.1.1.1",
+  "python_syntax": "OK (10 archivos)",
+  "xml_syntax": "OK (5 archivos)",
+  "manifest_and_internal_references": "OK",
+  "accounting_acl_added": false,
+  "authorization_source": "res.partner.user_id (cliente comercial principal)",
+  "general_menu_icon": "No se crea; se eliminan los menús propios anteriores al actualizar",
+  "odoo_tests_included": 9,
+  "odoo_runtime_tests_executed": false
+}

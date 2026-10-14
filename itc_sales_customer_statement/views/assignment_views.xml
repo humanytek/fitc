@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="assignment_tree" model="ir.ui.view">
+        <field name="name">sales.statement.assignment.tree</field>
+        <field name="model">sales.statement.assignment</field>
+        <field name="arch" type="xml">
+            <tree string="Clientes autorizados">
+                <field name="user_id"/>
+                <field name="partner_id"/>
+                <field name="company_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="assignment_form" model="ir.ui.view">
+        <field name="name">sales.statement.assignment.form</field>
+        <field name="model">sales.statement.assignment</field>
+        <field name="arch" type="xml">
+            <form string="Autorizar cliente">
+                <header><button name="action_refresh_contacts" type="object"
+                    string="Actualizar contactos hijos"/></header>
+                <sheet><group>
+                    <field name="user_id" options="{'no_create': True}"/>
+                    <field name="company_id" options="{'no_create': True}"/>
+                    <field name="partner_id" options="{'no_create': True}"/>
+                    <field name="contact_ids" widget="many2many_tags"
+                        domain="[('commercial_partner_id', '=', partner_id), ('id', '!=', partner_id)]"
+                        options="{'no_create': True}"/>
+                </group>
+                <p>Autoriza la empresa principal del cliente. Sus contactos hijos se incluyen al crear
+                la autorización. Si agregas contactos después, usa Actualizar contactos hijos.
+                Esta autorización no concede acceso a Contabilidad.</p></sheet>
+            </form>
+        </field>
+    </record>
+    <record id="assignment_action" model="ir.actions.act_window">
+        <field name="name">Clientes autorizados</field>
+        <field name="res_model">sales.statement.assignment</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <!-- Remove only this module's legacy menus, on installation and on upgrade. -->
+    <delete id="assignment_menu" model="ir.ui.menu"/>
+    <delete id="statement_admin_menu" model="ir.ui.menu"/>
+</odoo>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="assignment_company_rule" model="ir.rule">
+        <field name="name">Cartera: empresas activas</field>
+        <field name="model_id" ref="model_sales_statement_assignment"/>
+        <field name="domain_force">[('company_id', 'in', company_ids)]</field>
+    </record>
+    <record id="assignment_reader_rule" model="ir.rule">
+        <field name="name">Cartera: autorizaciones propias</field>
+        <field name="model_id" ref="model_sales_statement_assignment"/>
+        <field name="groups" eval="[(4, ref('group_statement_reader'))]"/>
+        <field name="domain_force">[('user_id', '=', user.id)]</field>
+    </record>
+    <record id="assignment_manager_rule" model="ir.rule">
+        <field name="name">Cartera: administrar autorizaciones</field>
+        <field name="model_id" ref="model_sales_statement_assignment"/>
+        <field name="groups" eval="[(4, ref('group_statement_manager'))]"/>
+        <field name="domain_force">[(1, '=', 1)]</field>
+    </record>
+</odoo>
